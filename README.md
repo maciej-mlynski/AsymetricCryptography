@@ -19,10 +19,18 @@ The hashing method is used in many important places in my application. The hash 
  Symetrci Key Size (bits) | RSA and DH Key Size (bits) | Eliptic Curve Key Size (bits) | 
 | ------------------------|----------------------------|-------------------------------|
 | 80                      |	1024                     	 | 160                           |
-| 112         	          | 2048                       | 224                         	 |
-| 128                   	| 3072                       | 256	                         |
+| 112         	           | 2048                       | 224                         	 |
+| 128                   	 | 3072                       | 256	                          |
 | 192                     | 7680                       | 384                           |
 | 256                     | 15360                      | 521                           |
+
+
+### 3. Seed Phrase
+
+The seed phrase is nothing more than a representation of the generated entropy in a user-friendly way. Let's start with why do we need it at all? The seed phrase in my project finds its use in private key recovery. This is exactly the same as it is in metamask wallets. What is worth adding at this point is that, in fact, the seed phrase will help to find the entropy even before the mixing process passes (SHA - 256). So the phrase is generated between the entropy process and the hashing method. how does it work?
+
+1. Entropy is represented in binary form. (128 bits or 256 bits)
+2. Looking for a checksum. For a 128 bit key it will be the first 4 bits, for 256 bits -> 8 bits. *The bits mentioned in the case of the checksum are strictly for the final version of the private key. (after sha-256 hashing method)
 
 
 
