@@ -15,3 +15,15 @@ On the issue of entropy generation, which is crucial for cryptographic asymmetry
 ### 2.	Hashing method
 
 The hashing method is used in many important places in my application. The hash will primarily be the private key and any other entropy. I have chosen the SHA 256 hash method. Any string passed through this algorithm will create a unique 256-bit hash. Is this enough? For the sake of comparison, let me add that in terms of security, the 256-bit key in the ECDSA model is comparable to the 3072-bit key for the RSA model. Below is an interesting comparison:
+
+ Symetrci Key Size (bits) | RSA and DH Key Size (bits) | Eliptic Curve Key Size (bits) | 
+| ------------------------|----------------------------|-------------------------------|
+| 80                      |	1024                     	 | 160                           |
+| 112         	          | 2048                       | 224                         	 |
+| 128                   	| 3072                       | 256	                         |
+| 192                     | 7680                       | 384                           |
+| 256                     | 15360                      | 521                           |
+
+
+
+
